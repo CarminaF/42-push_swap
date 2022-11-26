@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   index.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cfamilar <cfamilar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cfamilar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 15:53:36 by cfamilar          #+#    #+#             */
-/*   Updated: 2022/11/17 15:51:13 by cfamilar         ###   ########.fr       */
+/*   Updated: 2022/11/15 21:17:27 by cfamilar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,18 +29,17 @@ int    get_highest_index(t_stack **stack)
 
 int    get_lowest_index_position(t_stack **stack)
 {
-    int     lowest_index;
+    int     lowest;
     int     position;
     t_stack *temp;
 
     get_current_position(stack);
     temp = *stack;
-    lowest_index = INT_MAX;
     while (temp)
     {
-        if (temp->index < lowest_index)
+        if (temp->index < lowest)
         {
-            lowest_index = temp->index;
+            lowest = temp->index;
             position = temp->current_position;
         }
         temp = temp->next;

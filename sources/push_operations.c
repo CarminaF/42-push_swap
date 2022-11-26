@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_operations.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cfamilar <cfamilar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cfamilar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 19:00:41 by cfamilar          #+#    #+#             */
-/*   Updated: 2022/11/17 15:54:18 by cfamilar         ###   ########.fr       */
+/*   Updated: 2022/11/25 11:37:04 by cfamilar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void    do_push(t_stack **source, t_stack **dest)
     t_stack *temp;
 
     if (*source == NULL)
-        return;
+        return ;
     temp = (*source)->next;
     (*source)->next = *dest;
     *dest = *source;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cfamilar <cfamilar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cfamilar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 12:33:38 by cfamilar          #+#    #+#             */
-/*   Updated: 2022/11/17 15:47:13 by cfamilar         ###   ########.fr       */
+/*   Updated: 2022/11/23 18:41:24 by cfamilar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@ void    do_tiny_sort(t_stack **stack_a)
 {
     int     highest;
 
-    ft_putstr_fd("tiny sort init\n", 1);
-    if (is_sorted(stack_a))
-        return;
+    //ft_putstr_fd("tiny sort init\n", 1);
     highest = get_highest_index(stack_a);
     if ((*stack_a)->index == highest)
         do_ra(stack_a);
@@ -26,7 +24,7 @@ void    do_tiny_sort(t_stack **stack_a)
         do_rra(stack_a);
     if ((*stack_a)->index > (*stack_a)->next->index)
         do_sa(stack_a);
-    ft_putstr_fd("tiny sort complete\n", 1);
+    //ft_putstr_fd("tiny sort complete\n", 1);
 }
 
 void    pb_all_leave_three(t_stack **stack_a, t_stack **stack_b, int stack_size)
@@ -54,10 +52,12 @@ void    pb_all_leave_three(t_stack **stack_a, t_stack **stack_b, int stack_size)
     }
 }
 
-void    smallest_to_top(t_stack **stack, int stack_size)
+void    smallest_to_top(t_stack **stack)
 {
     int position;
+    int stack_size;
 
+    stack_size = get_stack_size(*stack);
     position = get_lowest_index_position(stack);
     if (position > stack_size / 2)
     {
@@ -87,6 +87,10 @@ void    do_large_sort(t_stack **stack_a, t_stack **stack_b, int stack_size)
         calculate_cost(stack_a, stack_b);
         do_cheapest_move(stack_a, stack_b);
     }
-    if (!is_sorted(stack_a))
-        smallest_to_top(stack_a, stack_size);
+    ft_putstr_fd("cheapest move finished\n", 1);
+    if (!is_sorted(*stack_a))
+    {
+        smallest_to_top(stack_a);
+        ft_putstr_fd("smallest to tp complete\n", 1);
+    }
 }

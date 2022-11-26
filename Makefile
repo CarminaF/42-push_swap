@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cfamilar <cfamilar@student.42.fr>          +#+  +:+       +#+         #
+#    By: cfamilar <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/09 21:39:45 by cfamilar          #+#    #+#              #
-#    Updated: 2022/11/15 19:57:36 by cfamilar         ###   ########.fr        #
+#    Updated: 2022/11/23 18:19:09 by cfamilar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,7 @@ SRCS		=	$(SRCS_DIR)/check.c \
 				$(SRCS_DIR)/sort.c \
 				$(SRCS_DIR)/stack.c \
 				$(SRCS_DIR)/swap_operations.c \
+				$(SRCS_DIR)/utils.c \
 
 OBJS		=	$(SRCS:$(SRCS_DIR)/%.c=$(OBJS_DIR)/%.o)
 

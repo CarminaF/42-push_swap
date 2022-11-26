@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cfamilar <cfamilar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cfamilar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 21:42:53 by cfamilar          #+#    #+#             */
-/*   Updated: 2022/11/17 16:19:30 by cfamilar         ###   ########.fr       */
+/*   Updated: 2022/11/23 18:29:00 by cfamilar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ typedef struct stack
 
 t_stack *fill_stack(int argc, char **argv);
 t_stack	*init_node(int value);
-t_stack	*get_bottom_of_stack(t_stack *stack);
+t_stack	*get_bottom_of_stack(t_stack **stack);
 void    error(void);
 void    check(int argc, char **argv);
 void    do_sa(t_stack **stack_a);
@@ -46,7 +46,8 @@ void    do_pb(t_stack **stack_a, t_stack **stack_b);
 void    free_stack(t_stack *stack);
 long	str_to_num(const char *str);
 int	    get_stack_size(t_stack *stack);
-int     is_sorted(t_stack **stack_a);
+int     get_abs(int num);
+int     is_sorted(t_stack *stack_a);
 int     get_highest_index(t_stack **stack);
 int     get_lowest_index_position(t_stack **stack);
 void    get_target_position(t_stack **stack_a, t_stack **stack_b);

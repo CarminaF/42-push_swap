@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cfamilar <cfamilar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cfamilar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 22:11:50 by cfamilar          #+#    #+#             */
-/*   Updated: 2022/11/17 15:17:01 by cfamilar         ###   ########.fr       */
+/*   Updated: 2022/11/23 18:44:17 by cfamilar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,20 +91,21 @@ void    check(int argc, char **argv)
         error();
 }
 
-int    is_sorted(t_stack **stack_a)
+int    is_sorted(t_stack *stack_a)
 {
-    t_stack *temp;
     int     stack_size;
-
-    temp = *stack_a;
-    stack_size = get_stack_size(temp);
+    
+    stack_size = get_stack_size(stack_a);
+    ft_putstr_fd("stack size: ", 1);
+    ft_putnbr_fd(stack_size, 1);
+    ft_putchar_fd('\n', 1);
     if (stack_size == 0 || stack_size == 1)
         return (1);
-    while(temp->next)
+    while(stack_a->next)
     {
-        if(temp->value > temp->next->value)
+        if(stack_a->value > stack_a->next->value)
             return (0);
-        temp = temp->next;
+        stack_a = stack_a->next;
     }
     return (1);
 }

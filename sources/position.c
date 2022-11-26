@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   position.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cfamilar <cfamilar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cfamilar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 17:46:57 by cfamilar          #+#    #+#             */
-/*   Updated: 2022/11/17 15:33:16 by cfamilar         ###   ########.fr       */
+/*   Updated: 2022/11/22 19:49:43 by cfamilar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,8 @@ void    get_current_position(t_stack **stack)
     while(ptr)
     {
         ptr->current_position = current_pos;
-        ft_putstr_fd("current pos: ", 1);
-        ft_putnbr_fd(ptr->current_position, 1);
-        ft_putchar_fd('\n', 1);
-        current_pos++;
         ptr = ptr->next;
+        current_pos++;
     }
 }
 

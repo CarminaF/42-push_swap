@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate_operations.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cfamilar <cfamilar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cfamilar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 14:02:05 by cfamilar          #+#    #+#             */
-/*   Updated: 2022/11/17 16:36:16 by cfamilar         ###   ########.fr       */
+/*   Updated: 2022/11/22 18:32:17 by cfamilar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_stack *get_penultimate(t_stack *stack)
 {
-    while(stack && stack->next && stack->next->next)
+    while (stack && stack->next)
         stack = stack->next;
     return (stack);
 }
@@ -25,12 +25,15 @@ void    do_rrx(t_stack **stack)
     t_stack *last;
     t_stack *temp;
 
-    last = get_bottom_of_stack(*stack);
+    last = get_bottom_of_stack(stack);
+    /*ft_putstr_fd("bottom of stack value: ", 1);
+    ft_putnbr_fd(last->value, 1);
+    ft_putchar_fd('\n', 1);*/
     penultimate = get_penultimate(*stack);
     temp = *stack;
     *stack = last;
     (*stack)->next = temp;
-    ///////??
+    penultimate->next = NULL;
 }
 
 void    do_rra(t_stack **stack_a)

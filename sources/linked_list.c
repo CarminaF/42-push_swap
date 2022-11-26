@@ -6,7 +6,7 @@
 /*   By: cfamilar <cfamilar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 14:26:08 by cfamilar          #+#    #+#             */
-/*   Updated: 2022/11/17 16:26:06 by cfamilar         ###   ########.fr       */
+/*   Updated: 2022/11/15 19:08:03 by cfamilar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,15 @@ t_stack	*init_node(int value)
 	return (new);
 }
 
-t_stack	*get_bottom_of_stack(t_stack *stack)
+t_stack	*get_bottom_of_stack(t_stack **stack)
 {
-	while(stack && stack->next)
-		stack = stack->next;
-	return (stack);
+	t_stack	*temp;
+
+	temp = *stack;
+	if(temp)
+		while(temp->next)
+			temp = temp->next;
+	return (temp);
 }
 
 void	add_to_bottom_of_stack(t_stack **stack, t_stack *new)
@@ -47,7 +51,7 @@ void	add_to_bottom_of_stack(t_stack **stack, t_stack *new)
 		*stack = new;
 		return ;
 	}
-	temp = get_bottom_of_stack(*stack);
+	temp = get_bottom_of_stack(stack);
 	temp->next = new;
 }
 
@@ -56,8 +60,6 @@ int	get_stack_size(t_stack *stack)
 	int	size;
 
 	size = 0;
-	if (!stack)
-		return (0);
 	while (stack)
 	{
 		stack = stack->next;

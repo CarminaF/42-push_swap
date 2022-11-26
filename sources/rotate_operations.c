@@ -6,7 +6,7 @@
 /*   By: cfamilar <cfamilar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 19:01:21 by cfamilar          #+#    #+#             */
-/*   Updated: 2022/11/17 16:31:08 by cfamilar         ###   ########.fr       */
+/*   Updated: 2022/11/15 19:10:45 by cfamilar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void    do_rx(t_stack **stack)
     *stack = (*stack)->next;
     head->next = NULL;
     add_to_bottom_of_stack(stack, head);
-    ///???????
 }
 
 void    do_ra(t_stack **stack_a)
