@@ -6,7 +6,7 @@
 /*   By: cfamilar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 13:54:20 by cfamilar          #+#    #+#             */
-/*   Updated: 2022/11/25 11:44:45 by cfamilar         ###   ########.fr       */
+/*   Updated: 2022/11/29 23:06:36 by cfamilar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,10 @@ t_stack *fill_stack(int argc, char **argv)
     i = 1;
     num = 0;
     stack_a = NULL;
+    //printf("Filling stack with values...\n");
     while (i < argc)
     {
         num = str_to_num(argv[i]);
-		/*ft_putnbr_fd(num, 1);
-		ft_putchar_fd('\n', 1);*/
         if (num < INT_MIN || num > INT_MAX)
             error();
         if (i == 1)
@@ -37,5 +36,6 @@ t_stack *fill_stack(int argc, char **argv)
             add_to_bottom_of_stack(&stack_a, init_node((int)num));
         i++;
     }
+    //print_stack(&stack_a);
     return (stack_a);
 }

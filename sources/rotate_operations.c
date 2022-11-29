@@ -12,7 +12,7 @@
 
 #include "../includes/push_swap.h"
 
-void    do_rx(t_stack **stack)
+static void    do_rx(t_stack **stack)
 {
     t_stack *head;
 

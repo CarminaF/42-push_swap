@@ -6,7 +6,7 @@
 /*   By: cfamilar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 14:02:05 by cfamilar          #+#    #+#             */
-/*   Updated: 2022/11/22 18:32:17 by cfamilar         ###   ########.fr       */
+/*   Updated: 2022/11/29 21:12:50 by cfamilar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 t_stack *get_penultimate(t_stack *stack)
 {
-    while (stack && stack->next)
+    while (stack->next->next)
         stack = stack->next;
     return (stack);
 }
 
-void    do_rrx(t_stack **stack)
+static void    do_rrx(t_stack **stack)
 {
     t_stack *penultimate;
     t_stack *last;

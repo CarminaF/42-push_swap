@@ -6,7 +6,7 @@
 /*   By: cfamilar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 22:11:50 by cfamilar          #+#    #+#             */
-/*   Updated: 2022/11/23 18:44:17 by cfamilar         ###   ########.fr       */
+/*   Updated: 2022/11/29 23:06:40 by cfamilar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ int number_of_zeros(int argc, char **argv)
 }
 void    check(int argc, char **argv)
 {
+    //printf("\nChecking valid input...\n");
     if(!is_number(argc, argv))
         error();
     if(number_of_zeros(argc,argv) > 1)
@@ -96,9 +97,7 @@ int    is_sorted(t_stack *stack_a)
     int     stack_size;
     
     stack_size = get_stack_size(stack_a);
-    ft_putstr_fd("stack size: ", 1);
-    ft_putnbr_fd(stack_size, 1);
-    ft_putchar_fd('\n', 1);
+    //printf("Stack size: %i\n", stack_size);
     if (stack_size == 0 || stack_size == 1)
         return (1);
     while(stack_a->next)

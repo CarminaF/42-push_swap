@@ -6,7 +6,7 @@
 /*   By: cfamilar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 15:53:36 by cfamilar          #+#    #+#             */
-/*   Updated: 2022/11/15 21:17:27 by cfamilar         ###   ########.fr       */
+/*   Updated: 2022/11/29 23:11:22 by cfamilar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int    get_highest_index(t_stack **stack)
     int     highest;
     t_stack *temp;
 
+    highest = INT_MIN;
     temp = *stack;
     while (temp)
     {
@@ -34,6 +35,7 @@ int    get_lowest_index_position(t_stack **stack)
     t_stack *temp;
 
     get_current_position(stack);
+    lowest = INT_MAX;
     temp = *stack;
     while (temp)
     {
@@ -55,7 +57,7 @@ void    get_index(t_stack *stack_a, int stack_size)
     t_stack *ptr;
 
     current_index = stack_size + 1;
-    while (--current_index> 0)
+    while (--current_index > 0)
     {
         ptr = stack_a;
         value = INT_MIN;

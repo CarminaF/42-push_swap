@@ -6,7 +6,7 @@
 /*   By: cfamilar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 12:33:38 by cfamilar          #+#    #+#             */
-/*   Updated: 2022/11/23 18:41:24 by cfamilar         ###   ########.fr       */
+/*   Updated: 2022/11/29 23:04:50 by cfamilar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void    do_tiny_sort(t_stack **stack_a)
 {
     int     highest;
 
-    //ft_putstr_fd("tiny sort init\n", 1);
+    //printf("Tiny sort start...\n");
     highest = get_highest_index(stack_a);
     if ((*stack_a)->index == highest)
         do_ra(stack_a);
@@ -24,7 +24,7 @@ void    do_tiny_sort(t_stack **stack_a)
         do_rra(stack_a);
     if ((*stack_a)->index > (*stack_a)->next->index)
         do_sa(stack_a);
-    //ft_putstr_fd("tiny sort complete\n", 1);
+   //printf("Tiny sort complete...\n");
 }
 
 void    pb_all_leave_three(t_stack **stack_a, t_stack **stack_b, int stack_size)
@@ -79,6 +79,7 @@ void    smallest_to_top(t_stack **stack)
 
 void    do_large_sort(t_stack **stack_a, t_stack **stack_b, int stack_size)
 {
+    //printf("Large sort start...\n");
     pb_all_leave_three(stack_a, stack_b, stack_size);
     do_tiny_sort(stack_a);
     while (*stack_b)
@@ -87,10 +88,14 @@ void    do_large_sort(t_stack **stack_a, t_stack **stack_b, int stack_size)
         calculate_cost(stack_a, stack_b);
         do_cheapest_move(stack_a, stack_b);
     }
-    ft_putstr_fd("cheapest move finished\n", 1);
+   // printf("Cheapest move finished...\n");
+    //print_stack(stack_a);
     if (!is_sorted(*stack_a))
     {
         smallest_to_top(stack_a);
-        ft_putstr_fd("smallest to tp complete\n", 1);
+        //printf("Moved smallest value to top of stack...\n");
     }
+    //printf("\nFinal stack\n");
+    //print_stack(stack_a);
+
 }

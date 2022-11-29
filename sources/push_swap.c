@@ -6,7 +6,7 @@
 /*   By: cfamilar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 12:00:56 by cfamilar          #+#    #+#             */
-/*   Updated: 2022/11/22 17:42:12 by cfamilar         ###   ########.fr       */
+/*   Updated: 2022/11/29 23:04:26 by cfamilar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void    push_swap(t_stack **stack_a, t_stack **stack_b, int stack_size)
 {
+    //printf("\nInitialising sort...\n");
     if (stack_size == 2)
         do_sa(stack_a);
     else if (stack_size == 3)

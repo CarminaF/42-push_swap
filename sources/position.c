@@ -6,7 +6,7 @@
 /*   By: cfamilar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 17:46:57 by cfamilar          #+#    #+#             */
-/*   Updated: 2022/11/22 19:49:43 by cfamilar         ###   ########.fr       */
+/*   Updated: 2022/11/29 22:31:35 by cfamilar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,9 +68,6 @@ void    get_target_position(t_stack **stack_a, t_stack **stack_b)
     while (temp_b)
     {
         target_pos = get_target(stack_a, temp_b->index, INT_MAX, target_pos);
-        ft_putstr_fd("target pos: ", 1);
-        ft_putnbr_fd(target_pos, 1);
-        ft_putstr_fd("\n", 1);
         temp_b->target_position = target_pos;
         temp_b = temp_b->next;
     }

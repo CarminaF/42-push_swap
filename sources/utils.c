@@ -6,7 +6,7 @@
 /*   By: cfamilar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 18:18:40 by cfamilar          #+#    #+#             */
-/*   Updated: 2022/11/25 11:44:49 by cfamilar         ###   ########.fr       */
+/*   Updated: 2022/11/29 23:23:31 by cfamilar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,3 +45,17 @@ long	str_to_num(const char *str) //ft_atoi but returns a long
 	}
 	return (res * op);
 }
+
+// void	print_stack(t_stack **stack)
+// {
+// 	t_stack *temp;
+	
+// 	temp = *stack;
+// 	if (!temp)
+// 		printf("Stack empty\n.");
+// 	while (temp)
+// 	{
+// 		printf("Value: %i, Index: %i, Target Position: %i\n", temp->value, temp->index, temp->target_position);
+// 		temp = temp->next;
+// 	}
+// }

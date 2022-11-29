@@ -6,13 +6,13 @@
 /*   By: cfamilar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 19:01:57 by cfamilar          #+#    #+#             */
-/*   Updated: 2022/11/12 13:48:26 by cfamilar         ###   ########.fr       */
+/*   Updated: 2022/11/26 17:42:05 by cfamilar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void    do_swap(t_stack *stack)
+static void    do_swap(t_stack *stack)
 {
     int temp;
 
