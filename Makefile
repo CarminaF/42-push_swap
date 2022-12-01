@@ -6,7 +6,7 @@
 #    By: cfamilar <cfamilar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/09 21:39:45 by cfamilar          #+#    #+#              #
-#    Updated: 2022/12/01 20:44:06 by cfamilar         ###   ########.fr        #
+#    Updated: 2022/12/01 20:56:16 by cfamilar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -99,4 +99,4 @@ test500:			$(NAME)
 					@./push_swap $(ARG) | wc -l
 
 
-.PHONY:				all clean fclean re libft
+.PHONY:				all clean fclean re libft test2 test3 test5 test100 test500
