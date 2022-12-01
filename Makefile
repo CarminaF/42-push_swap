@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cfamilar <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: cfamilar <cfamilar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/09 21:39:45 by cfamilar          #+#    #+#              #
-#    Updated: 2022/11/23 18:19:09 by cfamilar         ###   ########.fr        #
+#    Updated: 2022/12/01 20:44:06 by cfamilar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,5 +67,36 @@ fclean:				clean
 					$(RM) $(NAME)
 
 re:					fclean all
+
+test2:				$(NAME)
+					$(eval ARG = $(shell jot -r 2 0 200))
+					./push_swap $(ARG) | ./checker_Mac $(ARG)
+					@echo "Instruction count: "
+					@./push_swap $(ARG) | wc -l
+
+test3:				$(NAME)
+					$(eval ARG = $(shell jot -r 3 0 500))
+					./push_swap $(ARG) | ./checker_Mac $(ARG)
+					@echo "Instruction count: "
+					@./push_swap $(ARG) | wc -l
+
+test5:				$(NAME)
+					$(eval ARG = $(shell jot -r 5 0 5000))
+					./push_swap $(ARG) | ./checker_Mac $(ARG)
+					@echo "Instruction count: "
+					@./push_swap $(ARG) | wc -l
+
+test100:			$(NAME)
+					$(eval ARG = $(shell jot -r 100 0 5000))
+					./push_swap $(ARG) | ./checker_Mac $(ARG)
+					@echo "Instruction count: "
+					@./push_swap $(ARG) | wc -l
+
+test500:			$(NAME)
+					$(eval ARG = $(shell jot -r 500 0 1000000))
+					./push_swap $(ARG) | ./checker_Mac $(ARG)
+					@echo "Instruction count: "
+					@./push_swap $(ARG) | wc -l
+
 
 .PHONY:				all clean fclean re libft
