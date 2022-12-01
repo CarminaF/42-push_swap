@@ -6,7 +6,7 @@
 /*   By: cfamilar <cfamilar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 14:26:08 by cfamilar          #+#    #+#             */
-/*   Updated: 2022/11/15 19:08:03 by cfamilar         ###   ########.fr       */
+/*   Updated: 2022/12/01 14:02:20 by cfamilar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ t_stack	*get_bottom_of_stack(t_stack **stack)
 	t_stack	*temp;
 
 	temp = *stack;
-	if(temp)
-		while(temp->next)
+	if (temp)
+		while (temp->next)
 			temp = temp->next;
 	return (temp);
 }
@@ -44,7 +44,7 @@ void	add_to_bottom_of_stack(t_stack **stack, t_stack *new)
 {
 	t_stack	*temp;
 
-	if(!new)
+	if (!new)
 		return ;
 	if (*stack == NULL)
 	{

@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cfamilar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: cfamilar <cfamilar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/23 18:18:40 by cfamilar          #+#    #+#             */
-/*   Updated: 2022/11/29 23:23:31 by cfamilar         ###   ########.fr       */
+/*   Created: 2022/12/01 14:35:29 by cfamilar          #+#    #+#             */
+/*   Updated: 2022/12/01 14:55:09 by cfamilar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int get_abs(int num)
+int	get_abs(int num)
 {
-    if (num < 0)
-        return(num * -1);
-    return (num);
+	if (num < 0)
+		return (num * -1);
+	return (num);
 }
 
-long	str_to_num(const char *str) //ft_atoi but returns a long
+long	str_to_num(const char *str)
 {
 	int		i;
 	int		op;
@@ -45,17 +45,3 @@ long	str_to_num(const char *str) //ft_atoi but returns a long
 	}
 	return (res * op);
 }
-
-// void	print_stack(t_stack **stack)
-// {
-// 	t_stack *temp;
-	
-// 	temp = *stack;
-// 	if (!temp)
-// 		printf("Stack empty\n.");
-// 	while (temp)
-// 	{
-// 		printf("Value: %i, Index: %i, Target Position: %i\n", temp->value, temp->index, temp->target_position);
-// 		temp = temp->next;
-// 	}
-// }

@@ -3,24 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cfamilar <cfamilar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cfamilar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/15 18:49:42 by cfamilar          #+#    #+#             */
-/*   Updated: 2022/11/15 19:12:24 by cfamilar         ###   ########.fr       */
+/*   Created: 2022/12/01 13:42:38 by cfamilar          #+#    #+#             */
+/*   Updated: 2022/12/01 13:43:17 by cfamilar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void    free_stack(t_stack *stack)
+void	free_stack(t_stack *stack)
 {
-    t_stack *temp;
+	t_stack	*temp;
 
-    temp = NULL;
-    while(stack)
-    {
-        temp = stack;
-        stack = stack->next;
-        free(temp);
-    }
+	temp = NULL;
+	while (stack)
+	{
+		temp = stack;
+		stack = stack->next;
+		free(temp);
+	}
 }

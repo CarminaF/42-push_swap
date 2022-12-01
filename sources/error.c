@@ -6,14 +6,14 @@
 /*   By: cfamilar <cfamilar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 15:26:59 by cfamilar          #+#    #+#             */
-/*   Updated: 2022/11/10 15:36:29 by cfamilar         ###   ########.fr       */
+/*   Updated: 2022/12/01 13:41:39 by cfamilar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libraries/libft/libft.h"
 
-void    error(void)
+void	error(void)
 {
-    ft_putstr_fd("Error\n", 2);
-    exit(EXIT_FAILURE);
+	ft_putstr_fd("Error\n", 2);
+	exit(EXIT_FAILURE);
 }
