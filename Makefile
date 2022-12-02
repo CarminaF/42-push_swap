@@ -87,7 +87,7 @@ test5:				$(NAME)
 					@./push_swap $(ARG) | wc -l
 
 test100:			$(NAME)
-					$(eval ARG = $(shell jot -r 100 0 5000))
+					$(eval ARG = $(shell jot -r 100 0 50000))
 					./push_swap $(ARG) | ./checker_Mac $(ARG)
 					@echo "Instruction count: "
 					@./push_swap $(ARG) | wc -l
